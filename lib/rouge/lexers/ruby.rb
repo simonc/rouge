@@ -17,6 +17,7 @@ module Rouge
       state :strings do
         # symbols
         rule %r(
+          (?<=^|[^\w:]) # a:b or a::b exceptions
           :  # initial :
           @{0,2} # optional ivar, for :@foo and :@@foo
           [a-z_]\w*[!?]? # the symbol
